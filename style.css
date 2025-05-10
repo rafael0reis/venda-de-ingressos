@@ -7,8 +7,9 @@
     font-family: "Cabin", sans-serif;
 }
 
+/* configurações gerais */
 body{
-    background-color: red;
+    background-color: black;
     display: flex;
     flex-direction: column;
 }
@@ -20,6 +21,7 @@ li{
     list-style-type: none;
 }
 
+/* cabeçalho */
 .menu{
     background-color: black;
     width: 100%;
@@ -54,19 +56,23 @@ li{
     margin-top: 7px;
 }
 
-
+/* menu mobile */
 .celular{
-    background-color: rgb(16, 16, 15);
+    background-color: rgba(16, 16, 15, 0.805);
     width: 100%;
     height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    z-index: 10;
 }
 .open{
     display: none;
 }
-/* !important também funcionaria*/
+/* '!important' também funcionaria*/
 .navListaDoBotao{
     display: flex;
     flex-direction: column;
@@ -75,17 +81,154 @@ li{
 }
 .navListaDoBotao li{
     margin: 20px 0px;
+    cursor: pointer;
 }
 .navListaDoBotao li a{
     font-size: 30px;
     font-weight: 600;
 }
 
+/* corpo do site */
 .banner{
     width: 100%;
-    height: 40vh;
+    height: 70vh;
 }
 .banner img{
+    width: 100%;
+    height: 100%;
+}
+
+.trailer{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.videoTrailer{
+    width: 90%;
+    margin-bottom: 50px;
+    box-shadow: 0px 2px 7px #2e2c2c;
+}
+.trailer p{
+    color: white;
+    width: 300px;
+    font-size: 20px;
+    margin: 20px 0px;
+}
+.bttCompra{
+    padding: 1.5rem;
+    width: 14rem;
+    border-radius: .5rem;
+    margin-top: 40px;
+    border: none;
+    background-color: red;
+    color: white;
+    transition: bakcground-color 0.5s ease-in-out;
+}
+.bttCompra:active{
+    background-color: rgb(163, 9, 9);
+}
+
+/* banners conjunto */
+.catalogo{
+    width: 100%;
+    height: 1900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bannerF{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+}
+.bannerF p{
+    color: white;
+    position: absolute;
+    align-self: flex-end;
+    margin-bottom: 40px;
+    /* margin-right: 60px; */
+}
+.pView{
+    display: none;
+}
+.bannerC{
+    width: 87%;
+    margin: 5px 0px;
+    border-radius: .5rem;
+    transition: scale 1s ease-out, opacity 0.7s ease-out ;
+}
+.bannerCanimation{
+    scale: 95%;
+    opacity: 0.7;
+}
+
+.rodape{
+    background-color: aqua;
+}
+
+        /* configurações com tela superior a 480px */
+
+@media(min-width: 480px){
+.menu{
+    background-color: black;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+}
+.modelo-grande{
+    background-color: black;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+}
+.logo{
+    width: 150px;
+    max-height: 100%;
+    padding: 3px 10px;
+}
+.nav{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.navLista{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    font-family: "Cabin", sans-serif;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+}
+.navlista li, a{
+    margin-right: 17px;
+}
+
+.botaoMenu, .menuDoBotao{
+    display: none;
+}
+.celular{
+    display: none;
+}
+
+/* corpo do projeto */
+
+.banner{
+    width: 100%;
+    height: 60vh;
+}
+.banner img{
+    content: url('extra/imagens/modified/banner-lancamento-1280x427.jpg');
     width: 100%;
     height: 100%;
 }
@@ -103,54 +246,50 @@ li{
 }
 .trailer p{
     color: white;
+    width: 300px;
     font-size: 15px;
-    margin: 30px 30px 0px 30px;
+    margin: 20px 30px 0px 30px;
 }
 
-@media(min-width: 480px){
-    .menu{
-        background-color: black;
-        width: 100%;
-        height: 65px;
-        display: flex;
-        flex-direction: row;
-    }
-    .modelo-grande{
-        background-color: black;
-        width: 100%;
-        height: 65px;
-        display: flex;
-        flex-direction: row;
-    }
-    .logo{
-        width: 150px;
-        max-height: 100%;
-        padding: 3px 10px;
-    }
-    .nav{
-        width: 100%;
-        height: 100%;
-        display: block;
-    }
-    .navLista{
-        display: flex;
-        flex-direction: row;
-        list-style-type: none;
-        width: 100%;
-        height: 100%;
-        font-family: "Cabin", sans-serif;
-        font-weight: 600;
-        justify-content: center;
-        align-items: center;
-    }
-    .navlista li, a{
-        margin-right: 17px;
-    }
+    /* banners conjunto */
+.catalogo{
+    width: 100%;
+    height: 1900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bannerF{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+}
+.bannerF p{
+    color: white;
+    position: absolute;
+    align-self: flex-end;
+    margin-bottom: 40px;
+    margin-right: 60px;
+}
+.pView{
+    display: none;
+}
+.bannerC{
+    width: 87%;
+    margin: 5px 0px;
+    border-radius: .5rem;
+    transition: scale 1s ease-out, opacity 0.7s ease-out ;
+}
+.bannerC:hover{
+    scale: 95%;
+    opacity: 0.7;
+}
 
-    .botaoMenu, .menuDoBotao{
-        display: none;
-    }
-    .celular{
-        display: none;
-    }
+.rodape{
+    background-color: aqua;
+}
 }
