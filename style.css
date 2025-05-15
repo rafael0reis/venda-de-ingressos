@@ -16,6 +16,7 @@ body{
 a{
     text-decoration: none;
     color: white;
+    transition: font-size 0.3s ease-out, font-weight 0.5s ease-out;
 }
 li{
     list-style-type: none;
@@ -85,13 +86,13 @@ li{
 }
 .navListaDoBotao li a{
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 300;
 }
 
 /* corpo do site */
 .banner{
     width: 100%;
-    height: 70vh;
+    min-height: 70vh;
 }
 .banner img{
     width: 100%;
@@ -99,13 +100,16 @@ li{
 }
 
 .trailer{
-    height: 70vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 .videoTrailer{
+    flex: 1 1 200px;
     width: 90%;
     margin-bottom: 50px;
     box-shadow: 0px 2px 7px #2e2c2c;
@@ -124,7 +128,7 @@ li{
     border: none;
     background-color: red;
     color: white;
-    transition: bakcground-color 0.5s ease-in-out;
+    transition: bakcground-color 1s ease-in-out;
 }
 .bttCompra:active{
     background-color: rgb(163, 9, 9);
@@ -133,7 +137,7 @@ li{
 /* banners conjunto */
 .catalogo{
     width: 100%;
-    height: 1900px;
+    min-height: 1900px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -148,13 +152,15 @@ li{
     margin: 10px 0px;
 }
 .bannerF p{
+    padding: 10px 20px;
+    border-radius: 4px;
     color: white;
     position: absolute;
     align-self: flex-end;
-    margin-bottom: 40px;
-    /* margin-right: 60px; */
+    margin-bottom: 60px;
+    background-color: rgba(58, 55, 55, 0.5);
 }
-.pView{
+.pView, .pMini{
     display: none;
 }
 .bannerC{
@@ -169,127 +175,172 @@ li{
 }
 
 .rodape{
-    background-color: aqua;
+    /* background-color: ; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0px;
+}
+.rodape p{
+    color: white;
+    margin: 40px 0px;
+}
+.linkPort{
+    color: rgb(255, 128, 0);
 }
 
         /* configurações com tela superior a 480px */
 
-@media(min-width: 480px){
-.menu{
-    background-color: black;
-    width: 100%;
-    height: 65px;
-    display: flex;
-    flex-direction: row;
-}
-.modelo-grande{
-    background-color: black;
-    width: 100%;
-    height: 65px;
-    display: flex;
-    flex-direction: row;
-}
-.logo{
-    width: 150px;
-    max-height: 100%;
-    padding: 3px 10px;
-}
-.nav{
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-.navLista{
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    width: 100%;
-    height: 100%;
-    font-family: "Cabin", sans-serif;
-    font-weight: 600;
-    justify-content: center;
-    align-items: center;
-}
-.navlista li, a{
-    margin-right: 17px;
+@media(min-width: 480px) /*and (max-width: 768px)*/{
+    .menu{
+        background-color: black;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .modelo-grande{
+        background-color: black;
+        width: 100%;
+        height: 65px;
+        display: flex;
+        flex-direction: row;
+    }
+    .logo{
+        width: 150px;
+        height: 100%;
+        padding: 3px 10px 3px 5vw;
+    }
+    .nav{
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .navLista{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 5vw;
+        flex-wrap: wrap;
+        list-style-type: none;
+        width: 100%;
+        height: 100%;
+        font-family: "Cabin", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    .navLista a:hover{
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .botaoMenu, .menuDoBotao{
+        display: none;
+    }
+    .celular{
+        display: none;
+    }
+
+    /* corpo do projeto */
+
+
+    .banner{
+        width: 100%;
+        height: 90vh;
+    }
+    .banner img{
+        content: url('extra/imagens/modified/banner-4-x-4.jpeg');
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+        /* sessão do trailer */
+
+    .trailer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        min-height: 70vh;
+    }
+    .videoTrailer{
+        width: 90%;
+        margin: 100px 0 50px 0;
+        box-shadow: 5px 5px 12px rgb(34, 33, 33);
+    }
+    .trailer p{
+        color: white;
+        width: 800px;
+        font-size: 22px;
+        margin-bottom: 100px;
+    }
+    .bttCompra{
+        width: 18rem;
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        transition: padding 0.5s ease-out, width 0.5s ease-out, font-size 0.5s ease-out;
+    }
+    .bttCompra:hover{
+        padding: 1.6rem;
+        width: 18.5rem;
+        background-color: rgb(163, 9, 9) ;
+        font-size: 25px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+
+        /* banners conjunto */
+    .catalogo{
+        display: flex;
+        flex-direction: row;
+        min-height: unset; /*define que o min-height 1900px não vai ser o padrão pra qualquer tamanho de tela, pois ele tem mais peso fora do @media*/
+        margin-top: 100px;
+    }
+    .bannerF{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0px;
+    }
+    .bannerF p{
+        background-color: unset;
+        align-self: flex-end;
+        position: absolute;
+        color: white;
+        font-size: 10px;
+        transition: font-size 0.5s ease-out, font-weight 0.5s ease-out;
+    }
+    .pMini{
+        display: block;
+    }
+    .pView{
+        display: none;
+    }
+    .bannerC{
+        width: 90%;
+        margin: 5px 0px;
+        border-radius: 0.3rem;
+        transition: scale 0.7s ease-out, opacity 0.7s ease-out;
+    }
+    .bannerF:hover img{
+        scale: 97%;
+        opacity: 0.7;
+    }
+    .bannerF:hover .pMini{
+        font-size: 12px;
+        font-weight: 700;
+    }
 }
 
-.botaoMenu, .menuDoBotao{
-    display: none;
-}
-.celular{
-    display: none;
-}
-
-/* corpo do projeto */
-
-.banner{
-    width: 100%;
-    height: 60vh;
-}
-.banner img{
-    content: url('extra/imagens/modified/banner-lancamento-1280x427.jpg');
-    width: 100%;
-    height: 100%;
-}
-.trailer{
-    background: blue;
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.videoTrailer{
-    width: 90%;
-    margin-top: 50px;
-    box-shadow: 0px 2px 7px #2e2c2c;
-}
-.trailer p{
-    color: white;
-    width: 300px;
-    font-size: 15px;
-    margin: 20px 30px 0px 30px;
-}
-
-    /* banners conjunto */
-.catalogo{
-    width: 100%;
-    height: 1900px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.bannerF{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 0px;
-}
-.bannerF p{
-    color: white;
-    position: absolute;
-    align-self: flex-end;
-    margin-bottom: 40px;
-    margin-right: 60px;
-}
-.pView{
-    display: none;
-}
-.bannerC{
-    width: 87%;
-    margin: 5px 0px;
-    border-radius: .5rem;
-    transition: scale 1s ease-out, opacity 0.7s ease-out ;
-}
-.bannerC:hover{
-    scale: 95%;
-    opacity: 0.7;
-}
-
-.rodape{
-    background-color: aqua;
-}
+@media (min-width: 768px){
+    .banner img{
+        content: url(extra/imagens/banner-lancamento.webp);
+    }
 }

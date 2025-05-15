@@ -30,15 +30,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 function verificarClasses (banner, pN, classAdRem, classBCA){
-    let ban = document.querySelector(`.${banner}`)
-    let p   = document.querySelector(`.${pN}`)
-
-    if(p.classList.contains(`${classAdRem}`)){
-        p.classList.remove(`${classAdRem}`)
-        ban.classList.add(`${classBCA}`)
-    }else{
-        p.classList.add(`${classAdRem}`)
-        ban.classList.remove(`${classBCA}`)
+    let largura = window.innerWidth
+    if(largura < 480){
+        let ban = document.querySelector(`.${banner}`)
+        let p   = document.querySelector(`.${pN}`)
+        // let altura  = window.innerHeight
+        if(p.classList.contains(`${classAdRem}`)){
+            p.classList.remove(`${classAdRem}`)
+            ban.classList.add(`${classBCA}`)
+        }else{
+            p.classList.add(`${classAdRem}`)
+            ban.classList.remove(`${classBCA}`)
+        }
     }
 }
 
