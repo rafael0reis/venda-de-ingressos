@@ -7,7 +7,8 @@
     font-family: "Cabin", sans-serif;
 }
 
-/* configurações gerais */
+        /* configurações gerais */
+
 body{
     background-color: black;
     display: flex;
@@ -22,7 +23,8 @@ li{
     list-style-type: none;
 }
 
-/* cabeçalho */
+        /* cabeçalho */
+
 .menu{
     background-color: black;
     width: 100%;
@@ -57,7 +59,8 @@ li{
     margin-top: 7px;
 }
 
-/* menu mobile */
+        /* menu mobile */
+
 .celular{
     background-color: rgba(16, 16, 15, 0.805);
     width: 100%;
@@ -89,7 +92,8 @@ li{
     font-weight: 300;
 }
 
-/* corpo do site */
+        /* corpo do site */
+
 .banner{
     width: 100%;
     min-height: 70vh;
@@ -100,31 +104,38 @@ li{
 }
 
 .trailer{
-    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    margin-bottom: 50px;
+
+    /*após finalizar para dar tornar o vídeo com formato flexível*/
+
+    position: relative;  /*  posiciona vídeo absoluto dentro dentro do container */
+    width: 90%; /*coloca uma largura máxima para o video ocupar como absoluto*/
+    margin: 3% auto;
+    padding-top: 56.25%; /*isso cria um espaço com resolução 16:9 (alura:largura*100)*/
+
 }
 .videoTrailer{
-    flex: 1 1 200px;
-    width: 90%;
-    margin-bottom: 50px;
-    box-shadow: 0px 2px 7px #2e2c2c;
+    /*adicionado após fianlizar*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
 }
 .trailer p{
     color: white;
-    width: 300px;
+    width: 90%;
     font-size: 20px;
-    margin: 20px 0px;
+    margin: 35% 0 20px 0;
 }
 .bttCompra{
-    padding: 1.5rem;
     width: 14rem;
-    border-radius: .5rem;
     margin-top: 40px;
+    padding: 1.5rem;
+    border-radius: .5rem;
     border: none;
     background-color: red;
     color: white;
@@ -134,7 +145,8 @@ li{
     background-color: rgb(163, 9, 9);
 }
 
-/* banners conjunto */
+        /* banners conjunto */
+
 .catalogo{
     width: 100%;
     min-height: 1900px;
@@ -175,7 +187,6 @@ li{
 }
 
 .rodape{
-    /* background-color: ; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -260,22 +271,10 @@ li{
         /* sessão do trailer */
 
     .trailer{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        min-height: 70vh;
-    }
-    .videoTrailer{
-        width: 90%;
-        margin: 100px 0 50px 0;
-        box-shadow: 5px 5px 12px rgb(34, 33, 33);
+        padding-top: 50%;
     }
     .trailer p{
-        color: white;
-        width: 800px;
         font-size: 22px;
-        margin-bottom: 100px;
     }
     .bttCompra{
         width: 18rem;
@@ -295,6 +294,7 @@ li{
 
 
         /* banners conjunto */
+        
     .catalogo{
         display: flex;
         flex-direction: row;
@@ -339,8 +339,30 @@ li{
     }
 }
 
+        /* limitar a distancia do texto do trailer */
+
+@media(min-width: 480px){
+    .trailer p{
+        margin: 25% 0 40px 0;
+    }
+}
+@media(min-width:600px){
+    .trailer p {
+        margin: 5% 0 40px 0;
+    }
+}
+
 @media (min-width: 768px){
     .banner img{
         content: url(extra/imagens/banner-lancamento.webp);
+    }
+
+    .trailer{
+        width: 80%;
+        margin: 8% auto;
+        padding-top: 35%;
+    }
+    .trailer p{
+        margin: 2% 0 40px 0;
     }
 }
