@@ -94,6 +94,13 @@ li{
 
         /* corpo do site */
 
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .banner{
     width: 100%;
     min-height: 70vh;
@@ -154,6 +161,7 @@ li{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .bannerF{
     width: 100%;
@@ -203,7 +211,7 @@ li{
 
         /* configurações com tela superior a 480px */
 
-@media(min-width: 480px) /*and (max-width: 768px)*/{
+@media(min-width: 480px){
     .menu{
         background-color: black;
         width: 100%;
@@ -225,9 +233,7 @@ li{
         padding: 3px 10px 3px 5vw;
     }
     .nav{
-        width: 100%;
-        height: 100%;
-        display: block;
+        display: none;
     }
     .navLista{
         display: flex;
@@ -248,12 +254,6 @@ li{
         font-weight: 700;
     }
 
-    .botaoMenu, .menuDoBotao{
-        display: none;
-    }
-    .celular{
-        display: none;
-    }
 
     /* corpo do projeto */
 
@@ -275,6 +275,7 @@ li{
     }
     .trailer p{
         font-size: 22px;
+        margin: 25% 0 40px 0;
     }
     .bttCompra{
         width: 18rem;
@@ -295,30 +296,49 @@ li{
 
         /* banners conjunto */
         
-    .catalogo{
+    .catalogo{      
+        min-height: unset; 
+        /*define que o min-height 1900px não vai ser o padrão pra qualquer tamanho de tela, pois ele tem mais peso fora do @media
+        margin-top: 100px;*/
         display: flex;
         flex-direction: row;
-        min-height: unset; /*define que o min-height 1900px não vai ser o padrão pra qualquer tamanho de tela, pois ele tem mais peso fora do @media*/
-        margin-top: 100px;
+        /*faz as imagens começarem da primeira dentro do carrossel*/
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        width: 90%;
+        padding: 8px;
+        position: relative;
+        cursor: grab;
+        user-select: none;
+
+        /*esconde a barra de rolagem no explorer e edge*/
+        scrollbar-width: none;
     }
+        /*esconde a barra de rolagem nos demais navegadores*/
+    .catalogo::-webkit-scrollbar{
+        display: none;
+    }
+
     .bannerF{
-        width: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         margin: 10px 0px;
+        flex: 0 0 250px;
     }
-    .bannerF p{
-        background-color: unset;
+    .bannerF > .pMini{
+        display: block;
         align-self: flex-end;
         position: absolute;
-        color: white;
+        background-color: unset;
         font-size: 10px;
+        color: white;
         transition: font-size 0.5s ease-out, font-weight 0.5s ease-out;
-    }
-    .pMini{
-        display: block;
+        padding: 0 0;
+        margin-bottom: 50px;
+        width: 100px;
     }
     .pView{
         display: none;
@@ -341,15 +361,24 @@ li{
 
         /* limitar a distancia do texto do trailer */
 
-@media(min-width: 480px){
-    .trailer p{
-        margin: 25% 0 40px 0;
-    }
-}
 @media(min-width:600px){
+    .nav{
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .botaoMenu, .menuDoBotao{
+        display: none;
+    }
+    .celular{
+        display: none;
+    }
+
     .trailer p {
         margin: 5% 0 40px 0;
     }
+
+
 }
 
 @media (min-width: 768px){
@@ -365,4 +394,18 @@ li{
     .trailer p{
         margin: 2% 0 40px 0;
     }
+
+    .catalogo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        scrollbar-width: unset;
+    }
+    .catalogo::-webkit-scrollbar{
+        display: block;
+    }
+    .bannerF{
+        width: 350px;
+    }
+
 }
