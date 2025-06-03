@@ -319,6 +319,9 @@ li{
     .catalogo::-webkit-scrollbar{
         display: none;
     }
+    .catalogo.active-dragging{
+        cursor: grabbing;
+    }
 
     .bannerF{
         display: flex;
@@ -354,7 +357,7 @@ li{
         opacity: 0.7;
     }
     .bannerF:hover .pMini{
-        font-size: 12px;
+        font-size: 8px;
         font-weight: 700;
     }
 }

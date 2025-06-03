@@ -1,7 +1,13 @@
+import { cardMoviment } from "./src/actions/cardMove.js"
 
-//função de abrir o menu mobile
+
+        //função de abrir o menu mobile
+
 document.addEventListener('DOMContentLoaded', ()=>{
-    const botaoMenu = document.getElementById('botaoMenu').addEventListener('click',()=>{
+
+    cardMoviment()
+
+    document.getElementById('botaoMenu').addEventListener('click',()=>{
         var menu = document.querySelector('.celular')
         if(menu.classList.contains('open')){
             menu.classList.remove('open')
@@ -11,23 +17,24 @@ document.addEventListener('DOMContentLoaded', ()=>{
             document.querySelector('.imgBttMenu').src = 'extra/imagens/icones/cardápio-50-branco.png'
         }
     })
-})
 
-    //função para aparecer e sumir o texto do banner quando for clicado
+            //função para aparecer e sumir o texto do banner quando for clicado
 
-document.addEventListener('DOMContentLoaded', ()=>{
-    let txtB1 = document.querySelector('.theBegginingBanner').addEventListener('click', ()=>{
+    document.querySelector('.theBegginingBanner').addEventListener('click', ()=>{
         verificarClasses('theBegginingBanner', 'p1', 'pView', 'bannerCanimation')
     })
 
-    let txtB2 = document.querySelector('.darkKnightBanner').addEventListener('click', ()=>{
+    document.querySelector('.darkKnightBanner').addEventListener('click', ()=>{
         verificarClasses('darkKnightBanner', 'p2', 'pView', 'bannerCanimation')
     })
 
-    let txtB3 = document.querySelector('.theBatmanBanner').addEventListener('click', ()=>{
+    document.querySelector('.theBatmanBanner').addEventListener('click', ()=>{
         verificarClasses('theBatmanBanner', 'p3', 'pView', 'bannerCanimation')
     })
+
 })
+
+
 
 function verificarClasses (banner, pN, classAdRem, classBCA){
     let largura = window.innerWidth
