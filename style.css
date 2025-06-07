@@ -161,7 +161,7 @@ li{
 .catalogo{
     width: 100%;
     min-height: 1900px;
-    margin-top: 20%;
+    margin-top: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -310,6 +310,7 @@ li{
         flex-wrap: nowrap;
         width: 90%;
         padding: 8px;
+        margin-top: 10%;
         position: relative;
         cursor: grab;
         user-select: none;
@@ -341,9 +342,10 @@ li{
         color: white;
         transition: font-size 0.5s ease-out, font-weight 0.5s ease-out;
         padding: 0 0;
-        width: fit-content;
+        width: fit-content; /*largura flexível com limite para o texto*/
         max-width: 80%;
-        text-align: center;
+        text-align: center; /*centraliza o texto no parágrafo*/
+        white-space: nowrap; /*impede a quebra de linha*/
     }
     .pView{
         display: none;
@@ -359,7 +361,7 @@ li{
         opacity: 0.7;
     }
     .bannerF:hover .pMini{
-        font-size: 8px;
+        font-size: calc(90%);
         font-weight: 700;
     }
 }
@@ -405,12 +407,16 @@ li{
         flex-direction: row;
         align-items: center;
         scrollbar-width: unset;
+        margin-top: 5%;
+        height: 580px;
     }
     .catalogo::-webkit-scrollbar{
         display: block;
     }
     .bannerF{
-        width: 350px;
+        flex: 0 0 370px;
     }
-
+    .bannerF > .pMini{
+        font-size: 16px;
+    }
 }

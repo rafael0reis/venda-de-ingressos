@@ -1,7 +1,7 @@
 import { cardMoviment } from "./src/actions/cardMove.js"
 
 
-        //função de abrir o menu mobile
+            //função de abrir o menu mobile
 
 document.addEventListener('DOMContentLoaded', ()=>{
 
@@ -19,36 +19,26 @@ document.addEventListener('DOMContentLoaded', ()=>{
     })
 
             //função para aparecer e sumir o texto do banner quando for clicado
-
-    document.querySelector('.theBegginingBanner').addEventListener('click', ()=>{
-        verificarClasses('theBegginingBanner', 'p1', 'pView', 'bannerCanimation')
-    })
-
-    document.querySelector('.darkKnightBanner').addEventListener('click', ()=>{
-        verificarClasses('darkKnightBanner', 'p2', 'pView', 'bannerCanimation')
-    })
-
-    document.querySelector('.theBatmanBanner').addEventListener('click', ()=>{
-        verificarClasses('theBatmanBanner', 'p3', 'pView', 'bannerCanimation')
-    })
-
-})
-
-
-
-function verificarClasses (banner, pN, classAdRem, classBCA){
-    let largura = window.innerWidth
-    if(largura < 480){
-        let ban = document.querySelector(`.${banner}`)
-        let p   = document.querySelector(`.${pN}`)
-        // let altura  = window.innerHeight
-        if(p.classList.contains(`${classAdRem}`)){
-            p.classList.remove(`${classAdRem}`)
-            ban.classList.add(`${classBCA}`)
+    document.getElementById('catalogo').addEventListener('click', (event)=>{ 
+        const imgTarget = event.target
+        
+        if(imgTarget.classList.contains('bannerC')){
+            if(imgTarget.classList.contains('bannerCanimation')){
+                imgTarget.classList.remove('bannerCanimation')
+            }else{
+                imgTarget.classList.add('bannerCanimation')
+            }
+            const containerPai = imgTarget.closest('.bannerF')
+            const miniText = containerPai.querySelector('#miniText')
+            if(miniText){
+                if(miniText.classList.contains('pMini')){
+                    miniText.classList.remove('pMini')
+                }else{
+                    miniText.classList.add('pMini')
+                }
+            }
         }else{
-            p.classList.add(`${classAdRem}`)
-            ban.classList.remove(`${classBCA}`)
+            return;
         }
-    }
-}
-
+    })
+})
