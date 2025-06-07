@@ -139,9 +139,9 @@ li{
     margin: 35% 0 20px 0;
 }
 .bttCompra{
-    width: 14rem;
+    width: 16rem;
+    height: 5rem;
     margin-top: 40px;
-    padding: 1.5rem;
     border-radius: .5rem;
     border: none;
     background-color: red;
@@ -278,17 +278,14 @@ li{
         margin: 25% 0 40px 0;
     }
     .bttCompra{
-        width: 18rem;
         font-size: 26px;
         font-weight: 700;
         margin-bottom: 30px;
-        transition: padding 0.5s ease-out, width 0.5s ease-out, font-size 0.5s ease-out;
+        transition: font-size 0.5s ease-out;
     }
     .bttCompra:hover{
-        padding: 1.6rem;
-        width: 18.5rem;
-        background-color: rgb(163, 9, 9) ;
-        font-size: 25px;
+        background-color: rgb(204, 13, 13) ;
+        font-size: 24px;
         font-weight: 500;
         cursor: pointer;
     }
