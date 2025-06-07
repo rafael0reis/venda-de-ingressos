@@ -333,15 +333,15 @@ li{
     }
     .bannerF > .pMini{
         display: block;
-        align-self: flex-end;
         position: absolute;
         background-color: unset;
         font-size: 10px;
         color: white;
         transition: font-size 0.5s ease-out, font-weight 0.5s ease-out;
         padding: 0 0;
-        margin-bottom: 50px;
-        width: 100px;
+        width: fit-content;
+        max-width: 80%;
+        text-align: center;
     }
     .pView{
         display: none;
