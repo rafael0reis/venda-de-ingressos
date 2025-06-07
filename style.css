@@ -41,7 +41,6 @@ li{
 .logo{
     width: 150px;
     max-height: 60px;
-    padding: 3px 10px;
 }
 .imgLogo{
     max-height: 100%;
@@ -297,9 +296,9 @@ li{
 
 
         /* banners conjunto */
-        
-    .catalogo{      
-        min-height: unset; 
+
+    .catalogo{
+        min-height: unset;
         /*define que o min-height 1900px não vai ser o padrão pra qualquer tamanho de tela, pois ele tem mais peso fora do @media
         margin-top: 100px;*/
         display: flex;

@@ -31,10 +31,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
             const containerPai = imgTarget.closest('.bannerF')
             const miniText = containerPai.querySelector('#miniText')
             if(miniText){
-                if(miniText.classList.contains('pMini')){
-                    miniText.classList.remove('pMini')
+                if(miniText.classList.contains('pView')){
+                    miniText.classList.remove('pView')
                 }else{
-                    miniText.classList.add('pMini')
+                    miniText.classList.add('pView')
                 }
             }
         }else{
